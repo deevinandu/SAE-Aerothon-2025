@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+python-multipart
+requests
+opencv-python
+numpy
+python-dotenv
+google-generativeai
+pillow

@@ -1,0 +1,10 @@
+# Raspberry Pi Companion Computer - Python Dependencies
+
+# Core dependencies
+pymavlink>=2.4.40      # MAVLink protocol library
+opencv-python>=4.8.0   # Computer vision and camera capture
+PyYAML>=6.0           # Configuration file parsing
+psutil>=5.9.0         # System monitoring
+
+# Optional but recommended
+numpy>=1.24.0         # Numerical operations (used by OpenCV)

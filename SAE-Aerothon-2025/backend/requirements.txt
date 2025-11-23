@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+opencv-python
+numpy
+requests
+pydantic
+Pillow
+google-generativeai
+shapely
+matplotlib
+pymavlink
+pyserial
+sqlalchemy

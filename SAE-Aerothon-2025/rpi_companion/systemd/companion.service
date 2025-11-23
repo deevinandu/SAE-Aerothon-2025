@@ -1,0 +1,18 @@
+[Unit]
+Description=Raspberry Pi Companion Computer for Drone
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/rpi_companion
+ExecStart=/home/pi/rpi_companion/start_companion.sh
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

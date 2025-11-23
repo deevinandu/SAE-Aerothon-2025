@@ -1,0 +1,30 @@
+# Raspberry Pi Companion Computer Configuration
+
+# GCS (Ground Control Station) Settings
+gcs:
+  ip: "192.168.1.100"          # IP address of your GCS computer
+  video_port: 5600              # UDP port for video streaming
+  telemetry_port: 14550         # UDP port for telemetry (from drone to GCS)
+  command_port: 14551           # UDP port for commands (from GCS to drone)
+
+# Pixhawk/Flight Controller Settings
+pixhawk:
+  serial_port: "/dev/ttyACM0"   # Serial port for Pixhawk (usually /dev/ttyACM0 or /dev/ttyAMA0)
+  baud_rate: 57600              # Baud rate (57600 or 115200 depending on Pixhawk config)
+
+# Camera Settings
+camera:
+  device: 0                     # Camera device (0 for RPi camera, /dev/video0 for USB webcam)
+  width: 640                    # Video resolution width
+  height: 480                   # Video resolution height
+  fps: 30                       # Frames per second
+  quality: 80                   # JPEG quality (1-100, higher = better quality but more bandwidth)
+
+# System Monitor Settings
+monitor:
+  log_interval: 30              # How often to log system stats (seconds)
+
+# Logging Settings
+logging:
+  level: "INFO"                 # Log level: DEBUG, INFO, WARNING, ERROR
+  file: "/var/log/companion.log" # Log file path
