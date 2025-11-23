@@ -2,11 +2,6 @@
 
 <div align="center">
 
-![SAE Aerothon](https://img.shields.io/badge/SAE-Aerothon%202025-blue?style=for-the-badge)
-![Python](https://img.shields.io/badge/Python-3.8+-green?style=for-the-badge&logo=python)
-![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-
 **Advanced Multi-Drone Ground Control Station with AI-Powered Vision Analysis**
 
 [Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Documentation](#-documentation)
@@ -15,23 +10,23 @@
 
 ---
 
-## 🚀 Overview
+## Overview
 
 SAE Aerothon 2025 GCS is a next-generation ground control station designed for autonomous multi-drone operations with real-time AI-powered disaster detection and response capabilities. Built for the SAE Aerothon competition, it provides comprehensive drone fleet management, mission planning, and intelligent video analysis.
 
 ### Key Capabilities
 
-- 🎯 **Multi-Drone Swarm Management** - Control and monitor multiple drones simultaneously
-- 🤖 **AI Vision Analysis** - Real-time disaster detection using Google Gemini Vision API
-- 📹 **Live Video Streaming** - UDP/RTSP video with recording and AI annotation
-- 🗺️ **Mission Planning** - KML-based autonomous mission generation
-- 📊 **Real-Time Telemetry** - Live flight data visualization and monitoring
-- 💾 **Data Persistence** - Comprehensive event logging and flight recording
-- 🔄 **Auto-Reconnection** - Resilient communication with automatic recovery
+- **Multi-Drone Swarm Management** - Control and monitor multiple drones simultaneously
+- **AI Vision Analysis** - Real-time disaster detection using Google Gemini Vision API
+- **Live Video Streaming** - UDP/RTSP video with recording and AI annotation
+- **Mission Planning** - KML-based autonomous mission generation
+- **Real-Time Telemetry** - Live flight data visualization and monitoring
+- **Data Persistence** - Comprehensive event logging and flight recording
+- **Auto-Reconnection** - Resilient communication with automatic recovery
 
 ---
 
-## ✨ Features
+## Features
 
 ### Ground Control Station (GCS)
 
@@ -62,44 +57,7 @@ SAE Aerothon 2025 GCS is a next-generation ground control station designed for a
 
 ---
 
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Ground Control Station                    │
-├──────────────────────┬──────────────────────────────────────┤
-│   Frontend (Next.js) │      Backend (FastAPI)               │
-│                      │                                       │
-│  • Dashboard UI      │  • SwarmManager (Multi-drone)        │
-│  • Video Display     │  • Gemini Vision Service             │
-│  • Telemetry Widgets │  • VideoManager (Multi-source)       │
-│  • Mission Control   │  • MissionController                 │
-│  • Fleet Overview    │  • EventLogger                       │
-│                      │  • VideoRecorder                     │
-└──────────────────────┴──────────────────────────────────────┘
-                              ▲
-                              │ MAVLink (UDP/TCP/Serial)
-                              │ Video Stream (UDP/RTSP)
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Raspberry Pi Companion Computer                 │
-├─────────────────────────────────────────────────────────────┤
-│  • Camera Streamer (H.264/UDP)                              │
-│  • MAVLink Relay (Bidirectional)                            │
-│  • System Monitor                                           │
-└─────────────────────────────────────────────────────────────┘
-                              ▲
-                              │ MAVLink (Serial/UART)
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    Flight Controller                         │
-│                  (ArduPilot/PX4)                            │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -166,7 +124,7 @@ npm run dev
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
 ### Backend (.env)
 
@@ -209,7 +167,7 @@ mavlink:
 
 ---
 
-## 📖 Usage
+## Usage
 
 ### Connecting to a Drone
 
@@ -255,7 +213,7 @@ curl http://localhost:8000/events/stats/{session_id}
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 SAE-Aerothon-2025/
@@ -331,7 +289,7 @@ SAE-Aerothon-2025/
 
 ---
 
-## 🤖 AI Features
+## AI Features
 
 ### Disaster Detection
 
@@ -353,7 +311,7 @@ All AI detections are automatically logged with:
 
 ---
 
-## 🛠️ Development
+## Development
 
 ### Running Tests
 ```bash
@@ -384,7 +342,7 @@ npm start
 
 ---
 
-## 📊 Database Schema
+## Database Schema
 
 ### Tables
 
@@ -394,7 +352,7 @@ npm start
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Video Stream Issues
 - Ensure correct `VIDEO_SOURCE` in `.env`
@@ -413,46 +371,44 @@ npm start
 
 ---
 
-## 🤝 Contributing
+## Architecture
 
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Ground Control Station                    │
+├──────────────────────┬──────────────────────────────────────┤
+│   Frontend (Next.js) │      Backend (FastAPI)               │
+│                      │                                       │
+│  • Dashboard UI      │  • SwarmManager (Multi-drone)        │
+│  • Video Display     │  • Gemini Vision Service             │
+│  • Telemetry Widgets │  • VideoManager (Multi-source)       │
+│  • Mission Control   │  • MissionController                 │
+│  • Fleet Overview    │  • EventLogger                       │
+│                      │  • VideoRecorder                     │
+└──────────────────────┴──────────────────────────────────────┘
+                              ▲
+                              │ MAVLink (UDP/TCP/Serial)
+                              │ Video Stream (UDP/RTSP)
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│              Raspberry Pi Companion Computer                 │
+├─────────────────────────────────────────────────────────────┤
+│  • Camera Streamer (H.264/UDP)                              │
+│  • MAVLink Relay (Bidirectional)                            │
+│  • System Monitor                                           │
+└─────────────────────────────────────────────────────────────┘
+                              ▲
+                              │ MAVLink (Serial/UART)
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Flight Controller                         │
+│                  (ArduPilot/PX4)                            │
+└─────────────────────────────────────────────────────────────┘
+```
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- **SAE Aerothon** - Competition organizers
-- **Google Gemini** - AI vision capabilities
-- **ArduPilot** - Flight controller software
-- **MAVLink** - Communication protocol
-- **Next.js & FastAPI** - Web frameworks
-
----
-
-## 📞 Contact
-
-For questions or support:
-- **GitHub Issues**: [Report a bug](https://github.com/yourusername/SAE-Aerothon-2025/issues)
-- **Email**: your.email@example.com
-
----
-
-<div align="center">
-
-**Built with ❤️ for SAE Aerothon 2025**
-
-⭐ Star this repo if you find it helpful!
 
 </div>
